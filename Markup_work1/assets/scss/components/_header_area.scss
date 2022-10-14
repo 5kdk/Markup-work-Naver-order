@@ -27,10 +27,11 @@
       font-weight: 700;
     }
   }
-    .place-tab {
+  .place-tab {
     display: flex;
     height: $place-tab-height;
     background-color: #03b753;
+    // @include scroll-x;
   }
   .tab-inner {
     display: flex;

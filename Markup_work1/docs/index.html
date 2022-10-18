@@ -262,9 +262,7 @@
                   <p class="menu-price">9,999원</p>
                 </div>
               </a>
-              <a href="#" class="btn-cart disabled">
-                <img src="../assets/images/ico-cart.svg" alt="주문하기" class="ico-cart" />
-              </a>
+              <a href="#" class="btn-cart disabled"> 품절 </a>
             </li>
           </ul>
         </div>
@@ -368,9 +366,7 @@
                   <p class="menu-price">9,999원</p>
                 </div>
               </a>
-              <a href="#" class="btn-cart disabled">
-                <img src="../assets/images/ico-cart.svg" alt="주문하기" class="ico-cart" />
-              </a>
+              <a href="#" class="btn-cart disabled"> 품절 </a>
             </li>
           </ul>
         </div>
@@ -607,7 +603,7 @@
     <div class="order-type-popup hidden">
       <p class="title">어디서 드시나요?</p>
       <div class="type-list">
-        <a href="#" class="type-item">
+        <a href="#" class="type-item" onClick="popupClose()">
           <!-- <img src="" alt="포장" class="icon" /> -->
           <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
             <path
@@ -627,7 +623,7 @@
           <span class="btn-selection">선택</span>
         </a>
         <!-- <img src="" alt="매장" class="icon" /> -->
-        <a href="#" class="type-item">
+        <a href="#" class="type-item" onClick="popupClose()">
           <svg
             class="icon"
             height="637pt"
@@ -661,5 +657,29 @@
         </a>
       </div>
     </div>
+
+    <script>
+      window.onload = function () {
+        popupOpen();
+      };
+      const popupOpen = () => {
+        document.querySelector(".dimmed-layer").classList.remove("hidden");
+        document.querySelector(".order-type-popup").classList.remove("hidden");
+      };
+      const popupClose = () => {
+        document.querySelector(".dimmed-layer").classList.add("hidden");
+        document.querySelector(".order-type-popup").classList.add("hidden");
+      };
+
+      // 메뉴 리스트 토글
+      const btnToggle = document.querySelectorAll(".btn-toggle");
+      const toggleMenuList = (e) => {
+        e.currentTarget.closest(".menu-list-area").classList.toggle("is-closed");
+      };
+
+      btnToggle.forEach(function (e) {
+        e.addEventListener("click", toggleMenuList);
+      });
+    </script>
   </body>
 </html>

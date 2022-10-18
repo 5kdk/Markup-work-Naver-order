@@ -18,28 +18,14 @@
       color: #fff;
     }
 
-    .btn-close{
+    .btn-close {
       position: fixed;
       top: 0;
       right: 0;
       width: 56px;
       height: 56px;
-      .ico-close{
+      .ico-close {
         width: 18px;
-      }
-    }
-  }
-
-  .order-content-body{
-    border-top: 1px dashed $booking-color-border147;
-
-    .no-order{
-      padding: 70px 0;
-      text-align: center;
-      .txt {
-        margin-top: 6px;
-        font-size: 14px;
-        color: #8f8f8f;
       }
     }
   }
